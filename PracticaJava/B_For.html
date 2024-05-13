@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuenta Regresiva</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff6f61;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Cuenta Regresiva</h1>
+  <script>
+    // Pedir al usuario que ingrese un número entero
+    let numero = parseInt(prompt("Ingrese un número entero:"));
+
+    // Verificar si el valor ingresado es un número válido
+    if (!isNaN(numero) && Number.isInteger(numero)) {
+      // Inicializar una cadena vacía para almacenar la cuenta regresiva
+      let cuentaRegresiva = "";
+
+      // Bucle para construir la cuenta regresiva desde el número ingresado hasta 1
+      for (let i = numero; i > 0; i--) {
+        cuentaRegresiva += i + ",";
+      }
+
+      // Agregar el 0 al final de la cuenta regresiva
+      cuentaRegresiva += "0";
+
+      // Mostrar la cuenta regresiva al usuario
+      alert("Cuenta regresiva: " + cuentaRegresiva);
+    } else {
+      // Mostrar un mensaje de error si el valor ingresado no es un número entero válido
+      alert("Por favor, ingrese un número entero válido.");
+    }
+  </script>
+</div>
+</body>
+</html>

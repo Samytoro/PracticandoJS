@@ -1,0 +1,45 @@
+<!--En un restaurante los clientes pueden pedir menú de carne, pescado o verdura. 
+    Si pide carne se le ofrecerá como bebida vino tinto, si pide pescado se le ofrecerá vino blanco y si pide verdura se le ofrecerá agua
+
+Si no elije el menú de la lista aparecerá la frase elija carne, pescado o verdura.-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante</title>
+</head>
+<body>
+  <h1>Restaurante</h1>
+  
+  <!-- Campo de selección para el menú -->
+  <label for="menu">Elige un menú:</label>
+  <select id="menu">
+    <option value="carne">Carne</option>
+    <option value="pescado">Pescado</option>
+    <option value="verdura">Verdura</option>
+  </select>
+  <br>
+  <button onclick="solicitarBebida()">Pedir Bebida</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function solicitarBebida() {
+      // Obtener el menú seleccionado por el usuario
+      const menuSeleccionado = document.getElementById("menu").value;
+      
+      // Verificar el menú seleccionado y ofrecer la bebida correspondiente
+      const bebida = menuSeleccionado === "carne" ? "vino tinto" :
+                     menuSeleccionado === "pescado" ? "vino blanco" :
+                     menuSeleccionado === "verdura" ? "agua" : "Error";
+      
+      // Mostrar el resultado
+      const mensaje = bebida !== "Error" ? `¿Desea beber ${bebida}?` : "Elija carne, pescado o verdura.";
+      document.getElementById("resultado").textContent = mensaje;
+    }
+  </script>
+</body>
+</html>

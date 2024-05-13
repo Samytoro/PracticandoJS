@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Cuadrado</title>
+</head>
+<body>
+  <h1>Verificador de Cuadrado</h1>
+  
+  <!-- Campo de entrada para el número y su cuadrado -->
+  <label for="numero">Ingresa un número:</label>
+  <input type="number" id="numero">
+  <br>
+  <label for="cuadrado">Cuadrado:</label>
+  <input type="number" id="cuadrado">
+  <br>
+  <button onclick="verificarCuadrado()">Verificar</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function verificarCuadrado() {
+      // Obtener el número y su cuadrado ingresados por el usuario
+      const numero = parseFloat(document.getElementById("numero").value);
+      const cuadrado = parseFloat(document.getElementById("cuadrado").value);
+      
+      // Verificar si el cuadrado del número ingresado es correcto utilizando la forma resumida del if
+      const resultado = cuadrado === numero * numero ? "Correcto" : "Error";
+      
+      // Mostrar el resultado
+      document.getElementById("resultado").textContent = resultado;
+    }
+  </script>
+</body>
+</html>
+<!--El usuario debe entrar un número y su cuadrado.
+     Si es correcto el script enviará un mensja ede acierto en caso contrario dirá que se produjo un error.-->

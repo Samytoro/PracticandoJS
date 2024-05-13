@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Edad</title>
+</head>
+<body>
+  <h1>Verificador de Edad</h1>
+  
+  <!-- Campo de entrada para la edad -->
+  <label for="edad">Ingresa tu edad:</label>
+  <input type="number" id="edad">
+  <br>
+  <button onclick="verificarEdad()">Verificar</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function verificarEdad() {
+      // Obtener la edad ingresada por el usuario
+      const edad = parseInt(document.getElementById("edad").value);
+      
+      // Verificar si la edad del usuario es mayor o igual a 18 utilizando el operador ternario
+      const resultado = edad >= 18 ? "Entra" : `Espera ${18 - edad} años`;
+      
+      // Mostrar el resultado
+      document.getElementById("resultado").textContent = resultado;
+    }
+  </script>
+</body>
+</html>

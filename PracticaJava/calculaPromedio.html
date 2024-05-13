@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Nota Promedio</title>
+</head>
+<body>
+  <h1>Calculadora de Nota Promedio</h1>
+  
+  <!-- Campos de entrada para las notas de cada trimestre -->
+  <label for="trimestre1">Nota del primer trimestre:</label>
+  <input type="number" id="trimestre1" min="0" max="10">
+  <br>
+  <label for="trimestre2">Nota del segundo trimestre:</label>
+  <input type="number" id="trimestre2" min="0" max="10">
+  <br>
+  <label for="trimestre3">Nota del tercer trimestre:</label>
+  <input type="number" id="trimestre3" min="0" max="10">
+  <br>
+  <button onclick="calcularPromedio()">Calcular Promedio</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function calcularPromedio() {
+      // Obtener las notas ingresadas por el usuario
+      const nota1 = parseFloat(document.getElementById("trimestre1").value);
+      const nota2 = parseFloat(document.getElementById("trimestre2").value);
+      const nota3 = parseFloat(document.getElementById("trimestre3").value);
+      
+      // Calcular el promedio de las notas
+      const promedio = (nota1 + nota2 + nota3) / 3;
+      
+      // Determinar la calificación basada en el promedio
+      let calificacion;
+      if (promedio < 5) {
+        calificacion = "Suspenso";
+      } else if (promedio >= 5 && promedio < 7) {
+        calificacion = "Aprobado";
+      } else {
+        calificacion = "Notable";
+      }
+      
+      // Mostrar el resultado
+      document.getElementById("resultado").textContent = `El promedio de notas es ${promedio.toFixed(2)}. Calificación: ${calificacion}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Diferencia</title>
+</head>
+<body>
+  <h1>Calculadora de Diferencia</h1>
+  
+  <!-- Campos de entrada para los dos números -->
+  <label for="numero1">Primer número:</label>
+  <input type="number" id="numero1">
+  <br>
+  <label for="numero2">Segundo número:</label>
+  <input type="number" id="numero2">
+  <br>
+  <button onclick="calcularDiferencia()">Calcular Diferencia</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function calcularDiferencia() {
+      // Obtener los dos números ingresados por el usuario
+      const numero1 = parseFloat(document.getElementById("numero1").value);
+      const numero2 = parseFloat(document.getElementById("numero2").value);
+      
+      // Calcular la diferencia entre el mayor y el menor número
+      let diferencia;
+      if (numero1 > numero2) {
+        diferencia = numero1 - numero2;
+      } else {
+        diferencia = numero2 - numero1;
+      }
+      
+      // Mostrar el resultado
+      document.getElementById("resultado").textContent = `La diferencia entre el mayor y el menor número es ${diferencia}.`;
+    }
+  </script>
+</body>
+</html>

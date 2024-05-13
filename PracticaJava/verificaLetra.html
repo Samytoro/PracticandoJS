@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Letra</title>
+</head>
+<body>
+  <h1>Verificador de Letra</h1>
+  
+  <!-- Campo de entrada para la letra -->
+  <label for="letra">Ingrese una letra (A, B, C o D):</label>
+  <input type="text" id="letra" maxlength="1" pattern="[A-Da-d]">
+  <button onclick="verificarLetra()">Verificar</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function verificarLetra() {
+      // Obtener la letra ingresada por el usuario
+      const letra = document.getElementById("letra").value.toUpperCase();
+      
+      // Verificar si la letra es 'A'
+      if (letra === 'A') {
+        document.getElementById("resultado").textContent = "¡Has acertado!";
+      } else {
+        document.getElementById("resultado").textContent = "Te has equivocado.";
+      }
+    }
+  </script>
+</body>
+</html>
+<!--Este script pide al usuario que teclee una letra entre A, B, C, D. 
+    Si pulsa la letra A en mayúsucla o en minúscula le dará el mensaje de que ha acertado, en caso contrario le dirá que se equivocó.-->

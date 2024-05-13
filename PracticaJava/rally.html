@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba de Rally</title>
+</head>
+<body>
+  <h1>Prueba de Rally</h1>
+  
+  <!-- Campos de entrada para la longitud del tramo y el tiempo empleado -->
+  <label for="longitud">Longitud del tramo (km):</label>
+  <input type="number" id="longitud">
+  <br>
+  <label for="tiempo">Tiempo empleado (horas):</label>
+  <input type="number" id="tiempo">
+  <br>
+  <button onclick="verificarVelocidad()">Verificar Velocidad</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function verificarVelocidad() {
+      // Obtener la longitud del tramo y el tiempo empleado por el conductor
+      const longitud = parseFloat(document.getElementById("longitud").value);
+      const tiempo = parseFloat(document.getElementById("tiempo").value);
+      
+      // Calcular la velocidad en km/h
+      const velocidad = longitud / tiempo;
+      
+      // Verificar si la velocidad está entre 40 y 60 km/h para pasar la prueba
+      if (velocidad >= 40 && velocidad <= 60) {
+        document.getElementById("resultado").textContent = "El conductor pasa la prueba.";
+      } else {
+        document.getElementById("resultado").textContent = "El conductor es descalificado.";
+      }
+    }
+  </script>
+</body>
+</html>

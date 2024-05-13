@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sala de Juegos</title>
+</head>
+<body>
+  <h1>Sala de Juegos</h1>
+  
+  <!-- Campo de selección para el número de créditos -->
+  <label for="creditos">Ingrese el número de créditos:</label>
+  <input type="number" id="creditos">
+  <br>
+  <button onclick="verificarAcceso()">Verificar Acceso</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function verificarAcceso() {
+      // Obtener el número de créditos ingresado por el usuario
+      const creditos = parseInt(document.getElementById("creditos").value);
+      
+      // Determinar a qué salas puede acceder el usuario según el número de créditos
+      let acceso = "";
+      if (creditos >= 4) {
+        acceso = "Consolas, Juegos 2D, Juegos 3D, Realidad Virtual";
+      } else if (creditos === 3) {
+        acceso = "Consolas, Juegos 2D, Juegos 3D";
+      } else if (creditos === 2) {
+        acceso = "Consolas, Juegos 2D";
+      } else if (creditos === 1) {
+        acceso = "Consolas";
+      } else {
+        acceso = "No tienes suficientes créditos para acceder a ninguna sala.";
+      }
+      
+      // Mostrar el resultado
+      document.getElementById("resultado").textContent = `Puedes acceder a las salas de ${acceso}.`;
+    }
+  </script>
+</body>
+</html>
+<!--En una sala de juegos existen tre salas: Consolas, Juegos 2D, Juegos 3D, Realidad Virtual. Si un usuario paga  4 créditos 
+    puede acceder a todas, si paga 3 solo podrá acceder a las tres primeras, si paga 2 a las dos primeras 
+    y si paga 1 solo a la primera sala.-->

@@ -1,0 +1,47 @@
+<!--Una tienda aplica un descuento del 15% para las compras que incluyan más de 10 artículos iguales cuyo 
+precio sea superior a 40 euros. Tu programa debe comprobar y calcular la cantidad a pagar sabiendo el número de artículos 
+y el precio de cada uno.
+(Por ejemplo si compras 20 artículos de 50 euros se te descuenta un 15% del total pagarías 20*50 - 20*50*0.15 = 850 eruos.)-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Descuento</title>
+</head>
+<body>
+  <h1>Calculadora de Descuento</h1>
+  
+  <!-- Campos de entrada para el número de artículos y el precio de cada uno -->
+  <label for="cantidad">Número de artículos:</label>
+  <input type="number" id="cantidad" min="1">
+  <br>
+  <label for="precio">Precio por artículo:</label>
+  <input type="number" id="precio" min="0">
+  <br>
+  <button onclick="calcularTotal()">Calcular Total</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function calcularTotal() {
+      // Obtener la cantidad de artículos y el precio por artículo ingresados por el usuario
+      const cantidad = parseInt(document.getElementById("cantidad").value);
+      const precio = parseFloat(document.getElementById("precio").value);
+      
+      // Calcular el precio total sin descuento
+      let precioTotal = cantidad * precio;
+      
+      // Aplicar el descuento del 15% si se cumplen las condiciones
+      if (cantidad > 10 && precio > 40) {
+        precioTotal -= precioTotal * 0.15;
+      }
+      
+      // Mostrar el resultado
+      document.getElementById("resultado").textContent = `El total a pagar es ${precioTotal.toFixed(2)} euros.`;
+    }
+  </script>
+</body>
+</html>

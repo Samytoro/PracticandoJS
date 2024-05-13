@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente de Viaje</title>
+</head>
+<body>
+  <h1>Asistente de Viaje</h1>
+  
+  <!-- Campo de selección para el medio de transporte -->
+  <label for="transporte">Selecciona tu medio de transporte:</label>
+  <select id="transporte">
+    <option value="coche">Coche</option>
+    <option value="tren">Tren</option>
+    <option value="bicicleta">Bicicleta</option>
+    <option value="autobus">Autobús</option>
+  </select>
+  <br>
+  <button onclick="asistenteViaje()">Obtener Consejo de Viaje</button>
+
+  <!-- Párrafo donde se mostrará el consejo -->
+  <p id="consejo"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function asistenteViaje() {
+      // Obtener el medio de transporte seleccionado por el usuario
+      const transporte = document.getElementById("transporte").value;
+      
+      // Verificar si el usuario va en tren o autobús y mostrar un consejo
+      if (transporte === 'tren' || transporte === 'autobus') {
+        document.getElementById("consejo").textContent = "Recuerda llevar dinero para comprar el billete.";
+      } else {
+        document.getElementById("consejo").textContent = "¡Disfruta tu viaje!";
+      }
+    }
+  </script>
+</body>
+</html>
+<!--Este programa te ayuda a viajar. El programa pide al usuario 
+    si va a viajar con coche, tren, bicicleta o autobús. Si va en tren o autobus le recordará que lleve dinero para el billete.-->

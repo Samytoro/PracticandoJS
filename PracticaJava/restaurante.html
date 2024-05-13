@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente de Pedido</title>
+</head>
+<body>
+  <h1>Asistente de Pedido</h1>
+  
+  <!-- Campo de entrada para la bebida -->
+  <label for="bebida">Elija una bebida (vino, cerveza, refresco, agua):</label>
+  <input type="text" id="bebida">
+  <br>
+  <button onclick="dirigirCliente()">Dirigir Cliente</button>
+
+  <!-- Párrafo donde se mostrará la dirección -->
+  <p id="direccion"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function dirigirCliente() {
+      // Obtener la bebida ingresada por el cliente
+      const bebida = document.getElementById("bebida").value.toLowerCase();
+      
+      // Verificar si la bebida es vino o cerveza para dirigir al cliente a la barra
+      if (bebida === 'vino' || bebida === 'cerveza') {
+        document.getElementById("direccion").textContent = "Dirígete a la barra de bebidas.";
+      } else {
+        document.getElementById("direccion").textContent = "Dirígete a la tienda.";
+      }
+    }
+  </script>
+</body>
+</html>
+<!--Este ejercicio dirigirá a los clientes a la barra de bebidas o a la de comidas, para ello el
+     cliente puede pedir vino, cerveza, refresco, agua. Si pide un cerveza o vino se le dirige a
+      la barra y si no pues se le dirige a la tienda.-->

@@ -1,0 +1,49 @@
+<!--Un comerciante hace descuentos a sus clientes de la siguiente forma:
+Si ha comprado menos de 100 euros no hay descuento
+Si la compra está entre 100 y 300 euros le descuenta un 5%
+Si la compra está por encima de 300 hasta 500 euros le descuenta un 10%
+Si la compra supera los 400 euros le descuenta un 15%-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Descuentos</title>
+</head>
+<body>
+  <h1>Calculadora de Descuentos</h1>
+  
+  <!-- Campo de entrada para el monto de la compra -->
+  <label for="monto">Ingrese el monto de la compra (en euros):</label>
+  <input type="number" id="monto">
+  <br>
+  <button onclick="calcularDescuento()">Calcular Descuento</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function calcularDescuento() {
+      // Obtener el monto de la compra ingresado por el usuario
+      const monto = parseFloat(document.getElementById("monto").value);
+      
+      // Calcular el descuento según el monto de la compra
+      let descuento = 0;
+      if (monto >= 100 && monto <= 300) {
+        descuento = monto * 0.05;
+      } else if (monto > 300 && monto <= 500) {
+        descuento = monto * 0.10;
+      } else if (monto > 500) {
+        descuento = monto * 0.15;
+      }
+      
+      // Calcular el monto a pagar después del descuento
+      const montoFinal = monto - descuento;
+      
+      // Mostrar el resultado
+      document.getElementById("resultado").textContent = `El monto a pagar después del descuento es: ${montoFinal.toFixed(2)} euros.`;
+    }
+  </script>
+</body>
+</html>

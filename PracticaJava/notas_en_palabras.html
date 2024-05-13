@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Notas</title>
+</head>
+<body>
+  <h1>Conversor de Notas</h1>
+  
+  <!-- Campo de entrada para la nota -->
+  <label for="nota">Ingrese su nota:</label>
+  <input type="number" id="nota">
+  <br>
+  <button onclick="convertirNota()">Convertir Nota</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function convertirNota() {
+      // Obtener la nota ingresada por el usuario
+      const nota = parseFloat(document.getElementById("nota").value);
+      
+      // Convertir la nota a palabras según el rango
+      let calificacion = "";
+      if (nota >= 0 && nota <= 4) {
+        calificacion = "suspenso";
+      } else if (nota >= 5 && nota <= 6) {
+        calificacion = "aprobado";
+      } else if (nota >= 7 && nota <= 8) {
+        calificacion = "notable";
+      } else if (nota >= 9 && nota <= 10) {
+        calificacion = "sobresaliente";
+      } else {
+        calificacion = "Fuera de rango";
+      }
+      
+      // Mostrar el resultado
+      document.getElementById("resultado").textContent = `Tu calificación es ${calificacion}.`;
+    }
+  </script>
+</body>
+</html>
+<!--User
+En este ejercicio el script convertirá las notas numéricas de 
+un examen en paabras: 0 - 4 suspenso, 5-6 aprobado, 7-8 notable, 9-10 sobresaliente.
+(Si tecleo 8 me dirá "Tu calificación es  notable")-->

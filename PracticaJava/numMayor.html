@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparador de Números</title>
+</head>
+<body>
+  <h1>Comparador de Números</h1>
+  
+  <!-- Campos de entrada para los dos números -->
+  <label for="numero1">Primer número:</label>
+  <input type="number" id="numero1">
+  <br>
+  <label for="numero2">Segundo número:</label>
+  <input type="number" id="numero2">
+  <br>
+  <button onclick="compararNumeros()">Comparar</button>
+
+  <!-- Párrafo donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <!-- Script de JavaScript al final del body -->
+  <script>
+    function compararNumeros() {
+      // Obtener los dos números ingresados por el usuario
+      const numero1 = parseFloat(document.getElementById("numero1").value);
+      const numero2 = parseFloat(document.getElementById("numero2").value);
+      
+      // Verificar cuál de los dos números es mayor utilizando sentencias if
+      let mayor;
+      if (numero1 > numero2) {
+        mayor = numero1;
+      } else {
+        mayor = numero2;
+      }
+      
+      // Mostrar el resultado
+      document.getElementById("resultado").textContent = `El número mayor es ${mayor}.`;
+    }
+  </script>
+</body>
+</html>
+<!--El usuario debe introducir dos valores numéricos por teclado y la aplicación deberá indicar cual es el mayor, el primero o el segundo.
+
+La idea es usar las sentencias if reducidas (cond ? ture:false)
+-->

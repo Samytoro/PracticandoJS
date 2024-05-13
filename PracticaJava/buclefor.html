@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Media Aritmética</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff6f61;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Calculadora de Media Aritmética</h1>
+  <script>
+    // Variables para almacenar la suma y los números ingresados
+    let suma = 0;
+    let contador = 0;
+
+    // Bucle para pedir al usuario que ingrese los números
+    for (let i = 0; i < 4; i++) {
+      // Pedir al usuario que ingrese un número y convertirlo a tipo float
+      let numero = parseFloat(prompt("Ingresa un número:"));
+
+      // Verificar si el valor ingresado es un número válido
+      if (!isNaN(numero)) {
+        // Sumar el número ingresado a la suma total
+        suma += numero;
+        // Incrementar el contador de números ingresados
+        contador++;
+      } else {
+        // Si el valor ingresado no es un número válido, mostrar un mensaje de error y restar una iteración al contador para que el bucle vuelva a pedir un número
+        alert("Por favor, ingresa un número válido.");
+        i--;
+      }
+    }
+
+    // Calcular la media aritmética
+    let media = suma / contador;
+
+    // Mostrar el resultado al usuario
+    alert(`La media de los números ingresados es: ${media}`);
+  </script>
+</div>
+</body>
+</html>
+<!--Programa un script que pida al usuario que teclee 4 números 
+    (uno cada vez). Con esos números el programa deberá calcular la media aritmética. O sea la suma de los 4 números dividida entre 4-->
